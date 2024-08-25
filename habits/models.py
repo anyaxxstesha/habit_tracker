@@ -26,4 +26,11 @@ class Habit(models.Model):
     frequency = models.DurationField(default=timedelta(days=1), verbose_name='Время на выполнение привычки',
                                      help_text='Укажите время на выполнение привычки')
     is_public = models.BooleanField(blank=True, null=True, default=False, verbose_name='Флаг публичной привычки',
-                                      help_text='Укажите, является ли привычка публичной')
+                                    help_text='Укажите, является ли привычка публичной')
+
+    def __str__(self):
+        return self.action
+
+    class Meta:
+        verbose_name = 'Привычка'
+        verbose_name_plural = 'Привычки'
