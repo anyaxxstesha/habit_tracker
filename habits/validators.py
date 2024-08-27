@@ -19,6 +19,12 @@ def pleasant_habit_or_reward(value):
 
 
 def habit_time_check(habit_time):
-    """Проверяет, что в модели habit_time не больше 120 секунд"""
+    """Проверяет, что в модели привычки поле habit_time не больше 120 секунд"""
     if habit_time > timedelta(minutes=2):
         raise ValidationError("Время выполнения привычки не должно быть больше 120 секунд")
+
+
+def frequency_check(frequency):
+    """Проверяет, что в модели привычки поле frequency не больше 7 дней"""
+    if frequency > timedelta(days=7):
+        raise ValidationError("Нельзя выполнять привычку реже, чем 1 раз в 7 дней")
