@@ -14,7 +14,7 @@ class Habit(models.Model):
                               related_name='course', help_text='Укажите создателя привычки')
     place = models.TextField(verbose_name='Место для выполнения привычки',
                              help_text='Укажите место для выполнения привычки')
-    performance_time = models.TimeField(verbose_name='Время, когда необходимо выполнять привычку',
+    perform_at = models.TimeField(verbose_name='Время, когда необходимо выполнять привычку',
                                         help_text='Укажите время, когда необходимо выполнять привычку')
     action = models.TextField(verbose_name='Действие, которое представляет собой привычка',
                               help_text='Укажите действие, которое представляет собой привычка')
