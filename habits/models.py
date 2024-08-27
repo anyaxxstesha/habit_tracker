@@ -25,6 +25,11 @@ class Habit(models.Model):
                                          on_delete=models.SET_NULL)
     frequency = models.DurationField(default=timedelta(days=1), verbose_name='Периодичность выполнения привычки в днях',
                                      help_text='Укажите периодичность выполнения привычки в днях')
+    reward = models.TextField(verbose_name='Вознаграждение за выполнение привычки',
+                              help_text='Укажите вознаграждение за выполнение привычки', blank=True, null=True)
+    habit_time = models.DurationField(default=timedelta(minutes=1),
+                                      verbose_name='Время в минутах, которое предположительно потратит пользователь на выполнение привычки',
+                                      help_text='Укажите время в минутах, которое предположительно потратит пользователь на выполнение привычки')
     is_public = models.BooleanField(blank=True, null=True, default=False, verbose_name='Флаг публичной привычки',
                                     help_text='Укажите, является ли привычка публичной')
 
