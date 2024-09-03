@@ -39,7 +39,7 @@ class Habit(models.Model):
 
     def set_next_perform_at(self):
         now = timezone.now()
-        if self.next_perform_at is None or self.next_perform_at < now.date():
+        if self.next_perform_at is None or self.next_perform_at < now:
             if self.perform_at <= now.time():
                 day = (now.today() + timedelta(days=1)).day
             else:
