@@ -11,6 +11,8 @@ class User(AbstractUser):
     city = models.CharField(max_length=50, blank=True, null=True, verbose_name='Город', help_text='Укажите город')
     avatar = models.ImageField(upload_to='users/avatars/', blank=True, null=True, verbose_name='Аватар',
                                help_text='Загрузите аватар')
+    telegram_chat_id = models.CharField(max_length=64, verbose_name='Telegram chat id', help_text='Enter tg chat id',
+                                        blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
