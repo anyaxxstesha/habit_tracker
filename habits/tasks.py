@@ -7,7 +7,7 @@ from habits.services import start_notification
 
 
 @shared_task
-def send_notification_celery(course_id):
+def send_notification_celery():
     """Отправляет напоминание в Telegram для выполнения привычки"""
     now = timezone.now()
     queryset = Habit.objects.filter(perform_at__lt=now).prefetch_related('user', 'related_habit')
