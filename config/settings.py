@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'drf_yasg',
+    'django_celery_beat',
 
     'users',
     'habits',
@@ -142,3 +143,5 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': timedelta(minutes=1),
     },
 }
+
+TELEGRAM_BOT_URL = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
